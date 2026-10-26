@@ -164,19 +164,19 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fafaf9] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+    <div className="vercel-ui min-h-screen flex flex-col bg-[#fafaf9] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       {/* Top bar */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border-b border-zinc-200 dark:border-zinc-800">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 h-[64px] flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 grid place-items-center text-white font-bold text-[13px] shadow-lg shadow-violet-200 dark:shadow-none">
+            <div className="vercel-brand h-9 w-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 grid place-items-center text-white font-bold text-[13px] shadow-lg shadow-violet-200 dark:shadow-none">
               RF
             </div>
             <div>
               <div className="font-semibold leading-none tracking-tight">ResearchForge</div>
               <div className="text-xs text-zinc-500 dark:text-zinc-400">Multi-Agent • Search → Read → Write → Critic</div>
             </div>
-            <span className="hidden sm:inline-flex ml-2 text-[11px] font-medium px-2 py-1 rounded-full bg-violet-50 dark:bg-violet-950 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800">
+            <span className="vercel-provider hidden sm:inline-flex ml-2 text-[11px] font-medium px-2 py-1 rounded-full bg-violet-50 dark:bg-violet-950 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800">
               Gemini 2.5 Flash • Tavily
             </span>
           </div>
@@ -198,7 +198,7 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-white via-violet-50/60 to-[#fafaf9] dark:from-zinc-950 dark:via-violet-950/20 dark:to-zinc-950" />
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[880px] rounded-full bg-gradient-to-br from-violet-200 via-indigo-200 to-fuchsia-200 dark:from-violet-900/30 dark:via-indigo-900/20 dark:to-fuchsia-900/20 opacity-40 blur-3xl" />
+          <div className="vercel-mesh absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[880px] rounded-full opacity-40 blur-3xl" />
         </div>
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-10 sm:pt-14 pb-6">
@@ -232,7 +232,7 @@ export default function Home() {
               <button
                 onClick={() => run()}
                 disabled={loading}
-                className="h-[52px] px-7 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium hover:bg-black dark:hover:bg-zinc-100 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 shrink-0"
+                className="vercel-primary h-[52px] px-7 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium hover:bg-black dark:hover:bg-zinc-100 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 shrink-0"
               >
                 {loading ? (
                   <>

@@ -3,13 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --background: #fafaf9;
-  --foreground: #0a0a0a;
+  --background: #fafafa;
+  --foreground: #171717;
+  --surface: #ffffff;
+  --body-copy: #4d4d4d;
+  --muted-copy: #8f8f8f;
+  --hairline: #ebebeb;
+  --soft-hairline: #f2f2f2;
+  --link: #0070f3;
 }
 
 .dark {
   --background: #09090b;
   --foreground: #fafafa;
+  --surface: #111113;
+  --body-copy: #d4d4d8;
+  --muted-copy: #a1a1aa;
+  --hairline: #27272a;
+  --soft-hairline: #202023;
 }
 
 * { scrollbar-width: thin; scrollbar-color: #a1a1aa transparent; }
@@ -21,7 +32,139 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-geist), Arial, sans-serif;
+}
+
+.vercel-ui {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist), Arial, sans-serif;
+  --tw-ring-color: rgb(0 112 243 / 12%);
+}
+
+.vercel-ui :is(input, button, a) {
+  transition-duration: 150ms;
+}
+
+.vercel-ui [class*="font-[750]"] {
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.vercel-ui [class*="rounded-xl"] { border-radius: 6px; }
+.vercel-ui [class*="rounded-2xl"] { border-radius: 12px; }
+.vercel-ui [class*="rounded-[20px]"] { border-radius: 16px; }
+.vercel-ui .vercel-brand {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+.vercel-ui [class*="shadow-"] { box-shadow: 0 1px 1px rgb(0 0 0 / 4%); }
+
+.vercel-ui [class~="bg-[#fafaf9]"],
+.vercel-ui [class~="bg-zinc-50"] { background-color: var(--background); }
+.vercel-ui [class~="bg-white"] { background-color: var(--surface); }
+.vercel-ui [class~="bg-zinc-100"] { background-color: var(--soft-hairline); }
+.vercel-ui [class~="border-zinc-100"],
+.vercel-ui [class~="border-zinc-200"],
+.vercel-ui [class~="border-zinc-700"],
+.vercel-ui [class~="border-zinc-800"],
+.vercel-ui [class~="border-violet-200"],
+.vercel-ui [class~="border-violet-300"],
+.vercel-ui [class~="border-indigo-200"] { border-color: var(--hairline); }
+.vercel-ui [class~="text-zinc-900"],
+.vercel-ui [class~="text-zinc-800"] { color: var(--foreground); }
+.vercel-ui [class~="text-zinc-700"],
+.vercel-ui [class~="text-zinc-600"] { color: var(--body-copy); }
+.vercel-ui [class~="text-zinc-500"],
+.vercel-ui [class~="text-zinc-400"] { color: var(--muted-copy); }
+.vercel-ui [class~="text-violet-400"],
+.vercel-ui [class~="text-violet-600"],
+.vercel-ui [class~="text-violet-700"],
+.vercel-ui [class~="text-violet-800"],
+.vercel-ui [class~="text-indigo-600"] { color: var(--link); }
+.vercel-ui [class~="text-emerald-600"],
+.vercel-ui [class~="text-emerald-700"] { color: var(--link); }
+.vercel-ui [class~="bg-violet-50"],
+.vercel-ui [class~="bg-violet-600"],
+.vercel-ui [class~="bg-indigo-600"] { background-color: var(--foreground); }
+.vercel-ui [class~="bg-emerald-50"] { background-color: rgb(0 112 243 / 6%); }
+.dark .vercel-ui [class~="dark:bg-zinc-900"] { background-color: var(--surface); }
+.dark .vercel-ui [class~="dark:bg-zinc-800"] { background-color: #18181b; }
+.dark .vercel-ui [class~="dark:bg-zinc-950"] { background-color: var(--background); }
+.dark .vercel-ui [class~="dark:bg-zinc-700"] { background-color: var(--soft-hairline); }
+.dark .vercel-ui [class~="dark:bg-violet-950"] { background-color: var(--surface); }
+.dark .vercel-ui [class~="dark:border-zinc-700"],
+.dark .vercel-ui [class~="dark:border-zinc-800"],
+.dark .vercel-ui [class~="dark:border-violet-700"],
+.dark .vercel-ui [class~="dark:border-violet-800"] { border-color: var(--hairline); }
+.dark .vercel-ui [class~="dark:text-violet-300"],
+.dark .vercel-ui [class~="dark:text-violet-400"],
+.dark .vercel-ui [class~="dark:text-emerald-300"],
+.dark .vercel-ui [class~="dark:text-emerald-400"] { color: var(--link); }
+.vercel-ui .vercel-primary {
+  border-radius: 9999px;
+  background-color: var(--foreground);
+  color: var(--background);
+}
+.vercel-ui [class*="from-white"],
+.vercel-ui [class*="to-violet-"],
+.vercel-ui [class*="to-indigo-"],
+.vercel-ui [class*="via-violet-"],
+.vercel-ui [class*="via-indigo-"] { --tw-gradient-from: var(--surface); --tw-gradient-to: var(--surface); }
+.vercel-ui [class*="bg-gradient-to-r"] {
+  background-image: none;
+  color: var(--foreground);
+  -webkit-text-fill-color: currentColor;
+}
+.vercel-ui [class*="bg-gradient-to-br"]:not(.vercel-mesh) { background-image: none; }
+.vercel-ui [class*="bg-gradient-to-b"] {
+  --tw-gradient-from: #ffffff;
+  --tw-gradient-to: #fafafa;
+}
+.vercel-ui [class*="animate-[shimmer"] { background-color: var(--foreground); }
+.vercel-ui [class*="tracking-widest"] {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.vercel-ui [class*="rounded-full"][class*="text-xs"] {
+  border: 1px solid var(--hairline);
+}
+.vercel-ui .vercel-provider {
+  background-color: var(--surface);
+  color: var(--body-copy);
+  border-color: var(--hairline);
+}
+.dark .vercel-ui .vercel-provider {
+  background-color: var(--surface);
+  color: var(--body-copy);
+}
+
+.vercel-mesh {
+  background:
+    radial-gradient(ellipse at 22% 70%, rgb(0 223 216 / 30%), transparent 42%),
+    radial-gradient(ellipse at 42% 24%, rgb(0 124 240 / 24%), transparent 42%),
+    radial-gradient(ellipse at 62% 56%, rgb(121 40 202 / 24%), transparent 42%),
+    radial-gradient(ellipse at 80% 34%, rgb(255 0 128 / 20%), transparent 38%),
+    radial-gradient(ellipse at 50% 92%, rgb(249 203 40 / 18%), transparent 35%);
+  filter: blur(44px);
+}
+
+.dark .vercel-mesh {
+  opacity: 0.2;
+}
+
+.dark .vercel-ui [class*="bg-gradient-to-b"] {
+  --tw-gradient-from: #09090b;
+  --tw-gradient-to: #09090b;
+}
+
+.vercel-ui input:focus {
+  border-color: var(--link);
+  outline: 2px solid rgb(0 112 243 / 12%);
+  outline-offset: 1px;
 }
 
 /* shimmer */
